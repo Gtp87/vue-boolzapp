@@ -120,18 +120,18 @@
                 </div>
             </div>
             <div class="chat d-flex">
-                <div class="message received d-flex">
-                    <span class="text-message">La Marianna va in campagna</span>
-                    <span class="date-message">28/03/2020 10:10:40</span>
+                <div v-for="message in contacts[2].messages" class="message d-flex" :class="(message.status == 'sent') ? 'sent' : 'received'">
+                    <span class="text-message">{{message.text}}</span>
+                    <span class="date-message">{{message.date}}</span>
                 </div>
-                <div class="message sent d-flex">
+                <!-- <div class="message sent d-flex">
                     <span class="text-message">Sicuro di non aver sbagliato chat?</span>
                     <span class="date-message">28/03/2020 10:20:10</span>
                 </div>
                 <div class="message received d-flex">
                     <span class="text-message">Ah scusa!</span>
                     <span class="date-message">28/03/2020 16:15:22</span>
-                </div>
+                </div> -->
             </div>
             <div class="container-btm d-flex">
                 <i class="far fa-smile"></i>
