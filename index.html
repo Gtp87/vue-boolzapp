@@ -46,21 +46,21 @@
                 <input type="text" placeholder="Cerca o inizia una nuova chat" name="search" class="input-search">
             </div>
             <div class="contact-list">
-                <div class="contact d-flex">
+                <div v-for="contact in contacts" class="contact d-flex">
                     <div class="contact-logo d-flex">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                     </div>
                     <div class="contact-info d-flex">
                         <div class="contact-access d-flex">
-                            <span class="name">Michele</span>
-                            <span>10/01/2020 16:15:22</span>
+                            <span class="name">{{contact.name}}</span>
+                            <span>{{contact.messages[2].date}}</span>
                         </div>
                         <div class="contact-msg">
-                            <span>Tutto fa ...</span>
+                            <span>{{contact.messages[2].text}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="contact d-flex">
+                <!-- <div class="contact d-flex">
                     <div class="contact-logo d-flex">
                         <img src="img/avatar_2.jpg" alt="">
                     </div>
@@ -100,8 +100,8 @@
                         <div class="contact-msg">
                             <span>Si, ma preferirei andare al ci ...</span>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div> -->
             </div>
         </div>
         <div class="right-col">
