@@ -21,45 +21,264 @@ body {
     margin: auto;
     width: 80%;
     height: 95%;
+}
+
+
+.d-flex {
     display: flex;
 }
 
-.col-left {
-    width: 40%;
+
+
+.left-col {
+    width: 35%;
+    border-right: 1px solid rgb(211, 210, 210);
 }
 
-.col-left-top {
-    height: 80px;
-    display: flex;
+
+.container .header {
+    background-color: #EAEAEA;
     justify-content: space-between;
+    height: 75px;
 }
 
-.user-cont {
-    height: 80px;
-    display: flex;
+.container .header-user {
     align-items: center;
+    padding-left: 1em;
 }
 
-.user-cont img {
+.container .header .header-user img {
     height: 60px;
-    border-radius: 50%;
+    border-radius: 100%;
     cursor: pointer;
 }
 
-.user-cont h3 {
+.container .header .header-user h2 {
     font-size: 0.9em;
     padding-left: 0.5em;
     cursor: pointer;
 }
 
-.icon-container {
-    display: flex;
-    align-items: center;
-}
-
-.icon-container i {
+.container .header i {
     color: #B1B1B1;
     padding-right: 1em;
     font-size: 1.3em;
     cursor: pointer;
+}
+
+.container .header-icons {
+    align-items: center;
+}
+
+
+.notify {
+    background-color: #8EDAFC;
+    height: 80px;
+    align-items: center;
+}
+
+ .notify-icon {
+    margin-left: 1.5em;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.notify i {
+    font-size: 1.2em;
+    color: #8EDAFC;
+}
+
+ .notify-text {
+    padding-left: 0.5em;
+    flex-direction: column;
+}
+
+.notify-text-top {
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.notify-text-bottom {
+    font-size: 0.8em;
+    text-decoration: underline;
+    color: rgb(107, 107, 107);
+    cursor: pointer;
+}
+
+
+.search-chat {
+    height: 50px;
+    background-color: #F7F7F7;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.label-search {
+    width: 10%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid rgb(209, 209, 209);
+    border-right: 0;
+    align-items: center;
+    padding-left: 1em;
+    color: rgb(187, 187, 187);
+}
+
+.input-search {
+    width: 90%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid rgb(209, 209, 209);
+    border-left: 0;
+    outline: none;
+    padding-left: 1em;
+}
+
+.input-search::placeholder {
+    color: rgb(187, 187, 187);
+}
+
+
+.contact-list {
+    background-color: #FFFFFF;
+    height: calc(100% - 205px);
+    overflow-y: auto;
+}
+
+.contact {
+    height: 70px;
+    align-items: center;
+    padding-left: 1em;
+    border-bottom: 1px solid #EAEAEA;
+    cursor: pointer;
+}
+
+.contact.active {
+    background-color: #EAEAEA;
+}
+
+.contact:last-child {
+    border-bottom: 0;
+}
+
+.contact img {
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.contact-info {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0.8em;
+}
+
+.contact-access {
+    justify-content: space-between;
+}
+
+.contact-info span.name {
+    font-size: 1em;
+    color: black;
+}
+
+.contact-info span {
+    font-size: 0.6em;
+    color: #B1B1B1;
+}
+
+
+
+.right-col {
+    width: 65%;
+}
+
+
+.contact-info {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0.8em;
+}
+
+.right-col .header span {
+    font-size: 0.7em;
+    color: rgb(107, 107, 107);
+}
+
+.right-col .header .name {
+    font-size: 0.9em;
+    color: black;
+    padding-bottom: 0.2em;
+}
+
+
+
+.chat {
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 150px);
+    width: 100%;
+    padding: 2em 10%;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.message {
+    margin: 0.5em 0;
+    border-radius: 0.8em;
+    flex-direction: column;
+    min-width: 40%;
+    max-width: 65%;
+}
+
+.sent {
+    align-self: flex-end;
+    background-color: #D5F9BA;
+}
+
+.received {
+    align-self: flex-start;
+    background-color: #FFFFFF;
+}
+
+.text-message {
+    align-self: flex-start;
+    padding: 1em 2em 0.5em 1em;
+}
+
+.date-message {
+    font-size: 0.7em;
+    color: #B1B1B1;
+    align-self: flex-end;
+    padding: 0 0.5em 0.5em 0;
+}
+
+
+.container-btm {
+    align-items: center;
+    height: 75px;
+    background-color: #F3EEEA;
+}
+
+.container-btm i {
+    font-size: 1.5em;
+    color: #6B7376;
+    padding: 0 1em;
+    cursor: pointer;
+}
+
+.send-message {
+    border: 0;
+    outline: none;
+    width: 100%;
+    padding: 1em 1em;
+    border-radius: 0.5em;
+}
+
+.send-message::placeholder{
+    color: #6B7376;
 }

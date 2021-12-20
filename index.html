@@ -17,21 +17,127 @@
     <title>Boolzap</title>
 </head>
 <body>
-    <div id="app">
-        <div class="container">
-            <div class="col-left">
-                <div class="col-left-top">
-                    <div class="user-cont">
-                        <img src="img/avatar_io.jpg" alt="">
-                        <h3>Nome Utente</h3>
+    <div class="container d-flex" id="app">
+        <div class="left-col">
+            <div class="header d-flex">
+                <div class="header-user d-flex">
+                    <img src="img/avatar_io.jpg" alt="">
+                    <h2>Nome Utente</h2>
+                </div>
+                <div class="header-icons d-flex">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="notify d-flex">
+                <div class="notify-icon d-flex">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="notify-text d-flex">
+                    <span class="notify-text-top">Ricevi notifiche di nuovi messaggi</span>
+                    <span class="notify-text-bottom">Attiva notifiche desktop</span>
+                </div>
+            </div>
+            <div class="search-chat d-flex">
+                <label for="search" class="label-search d-flex">
+                    <i class="fa fa-search"></i>
+                </label>
+                <input type="text" placeholder="Cerca o inizia una nuova chat" name="search" class="input-search">
+            </div>
+            <div class="contact-list">
+                <div class="contact d-flex">
+                    <div class="contact-logo d-flex">
+                        <img src="img/avatar_1.jpg" alt="">
                     </div>
-                    <div class="icon-container">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                    <div class="contact-info d-flex">
+                        <div class="contact-access d-flex">
+                            <span class="name">Michele</span>
+                            <span>10/01/2020 16:15:22</span>
+                        </div>
+                        <div class="contact-msg">
+                            <span>Tutto fa ...</span>
+                        </div>
                     </div>
                 </div>
-            </div> 
+                <div class="contact d-flex">
+                    <div class="contact-logo d-flex">
+                        <img src="img/avatar_2.jpg" alt="">
+                    </div>
+                    <div class="contact-info d-flex">
+                        <div class="contact-access d-flex">
+                            <span class="name">Fabio</span>
+                            <span>20/03/2020 16:35:00</span>
+                        </div>
+                        <div class="contact-msg">
+                            <span>Mi piacerebbe ma devo andare a ...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact active d-flex">
+                    <div class="contact-logo d-flex">
+                        <img src="img/avatar_3.jpg" alt="">
+                    </div>
+                    <div class="contact-info d-flex">
+                        <div class="contact-access d-flex">
+                            <span class="name">Samuele</span>
+                            <span>28/03/2020 16:15:22</span>
+                        </div>
+                        <div class="contact-msg">
+                            <span>Ah scusa! ...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact d-flex">
+                    <div class="contact-logo d-flex">
+                        <img src="img/avatar_4.jpg" alt="">
+                    </div>
+                    <div class="contact-info d-flex">
+                        <div class="contact-access d-flex">
+                            <span class="name">Luisa</span>
+                            <span>10/01/2020 15:50:00</span>
+                        </div>
+                        <div class="contact-msg">
+                            <span>Si, ma preferirei andare al ci ...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-col">
+            <div class="header d-flex">
+                <div class="header-user d-flex">
+                    <img src="img/avatar_3.jpg" alt="">
+                    <div class="contact-info d-flex">
+                        <span class="name">Samuele</span>
+                        <span class="last-seen">Ultimo accesso 28/03/2020 alle 16:15:22</span>
+                    </div>
+                </div>
+                <div class="header-icons d-flex">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="chat d-flex">
+                <div class="message received d-flex">
+                    <span class="text-message">La Marianna va in campagna</span>
+                    <span class="date-message">28/03/2020 10:10:40</span>
+                </div>
+                <div class="message sent d-flex">
+                    <span class="text-message">Sicuro di non aver sbagliato chat?</span>
+                    <span class="date-message">28/03/2020 10:20:10</span>
+                </div>
+                <div class="message received d-flex">
+                    <span class="text-message">Ah scusa!</span>
+                    <span class="date-message">28/03/2020 16:15:22</span>
+                </div>
+            </div>
+            <div class="container-btm d-flex">
+                <i class="far fa-smile"></i>
+                <input class="send-message" type="text" placeholder="Scrivi un messaggio">
+                <i class="fas fa-microphone"></i>
+            </div>
         </div>
     </div>
 <script src="js/script.js"></script>  
