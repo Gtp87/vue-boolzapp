@@ -94,14 +94,10 @@ const app = new Vue(
                             text: "Si, ma preferirei andare al cinema",
                             status: "received",
                         },
-                        {
-                            date: "10/01/2020 15:50:00",
-                            text: "Ok, faremo una prossima volta",
-                            status: "sent",
-                        },
                     ],
                 },
             ],
+            counter: 0,
         },
         methods: {
 
