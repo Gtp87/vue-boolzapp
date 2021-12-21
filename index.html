@@ -46,7 +46,7 @@
                 <input type="text" placeholder="Cerca o inizia una nuova chat" name="search" class="input-search">
             </div>
             <div class="contact-list">
-                <div v-for="contact in contacts" class="contact d-flex">
+                <div v-for="(contact, index) in contacts" class="contact d-flex">
                     <div class="contact-logo d-flex">
                         <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                     </div>
@@ -109,8 +109,8 @@
                 <div class="header-user d-flex">
                     <img src="img/avatar_3.jpg" alt="">
                     <div class="contact-info d-flex">
-                        <span class="name">Samuele</span>
-                        <span class="last-seen">Ultimo accesso 28/03/2020 alle 16:15:22</span>
+                        <span class="name">{{contacts[2].name}}</span>
+                        <span class="last-seen">{{contacts[2].messages[2].date}}</span>
                     </div>
                 </div>
                 <div class="header-icons d-flex">
@@ -120,7 +120,7 @@
                 </div>
             </div>
             <div class="chat d-flex">
-                <div v-for="message in contacts[2].messages" class="message d-flex" :class="(message.status == 'sent') ? 'sent' : 'received'">
+                <div v-for="(message, index) in contacts[2].messages" class="message d-flex" :class="(message.status == 'sent') ? 'sent' : 'received'">
                     <span class="text-message">{{message.text}}</span>
                     <span class="date-message">{{message.date}}</span>
                 </div>
