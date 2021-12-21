@@ -100,7 +100,9 @@ const app = new Vue(
             counter: 0,
         },
         methods: {
-
+            selectChat: function (index) {
+                return this.counter = index
+            },
         }
     }
 );

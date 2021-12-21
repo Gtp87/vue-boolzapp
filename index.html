@@ -46,7 +46,7 @@
                 <input type="text" placeholder="Cerca o inizia una nuova chat" name="search" class="input-search">
             </div>
             <div class="contact-list">
-                <div v-for="(contact, index) in contacts" class="contact d-flex">
+                <div @click="selectChat(index)" v-for="(contact, index) in contacts" class="contact d-flex">
                     <div class="contact-logo d-flex">
                         <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                     </div>
