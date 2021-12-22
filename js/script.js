@@ -98,11 +98,39 @@ const app = new Vue(
                 },
             ],
             counter: 0,
+            text: '',
         },
         methods: {
             selectChat: function (index) {
-                return this.counter = index
+                return this.counter = index;
             },
-        }
-    }
-);
+
+            // funzione nuovo messaggio
+            newMessage: function () {
+                // controllo non sia un testo vuoto
+                if (this.text != '') {
+
+                    // pusho il messaggio
+                    this.contacts[this.counter].messages.push(
+                        {
+                            date: "22/12/2021 12:40:00",
+                            text: this.text,
+                            status: "sent",
+                        }
+                    );
+                }
+                this.text = '';
+
+                // timeout risposta
+                setTimeout(() => {
+                    this.contacts[this.counter].messages.push(
+                        {
+                            date: "22/12/2021 12:40:00",
+                            text: 'ok',
+                            status: "received",
+                        })
+                }, 1000);
+            }
+        },
+    },
+)

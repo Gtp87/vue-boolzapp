@@ -136,7 +136,7 @@
             </div>
             <div class="container-btm d-flex">
                 <i class="far fa-smile"></i>
-                <input class="send-message" type="text" placeholder="Scrivi un messaggio">
+                <input  @keyup.enter='newMessage' v-model="text"class="send-message" type="text" placeholder="Scrivi un messaggio">
                 <i class="fas fa-microphone"></i>
             </div>
         </div>
