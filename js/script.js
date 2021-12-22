@@ -107,13 +107,17 @@ const app = new Vue(
 
             // funzione nuovo messaggio
             newMessage: function () {
+                // imposto data corrente
+                dayjs.extend(window.dayjs_plugin_customParseFormat);
+                let currentDay = dayjs().format("D/M/YYYY HH:mm:ss");
+                
                 // controllo non sia un testo vuoto
                 if (this.text != '') {
 
                     // pusho il messaggio
                     this.contacts[this.counter].messages.push(
                         {
-                            date: "22/12/2021 12:40:00",
+                            date: currentDay,
                             text: this.text,
                             status: "sent",
                         }
@@ -125,7 +129,7 @@ const app = new Vue(
                 setTimeout(() => {
                     this.contacts[this.counter].messages.push(
                         {
-                            date: "22/12/2021 12:40:00",
+                            date: currentDay,
                             text: 'ok',
                             status: "received",
                         })
