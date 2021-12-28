@@ -99,6 +99,7 @@ const app = new Vue(
             ],
             counter: 0,
             text: '',
+            searchChat: '',
         },
         methods: {
             selectChat: function (index) {
@@ -134,7 +135,16 @@ const app = new Vue(
                             status: "received",
                         })
                 }, 1000);
-            }
+            },
+            searchUser: function () {
+                this.contacts.forEach((contact) => {
+                    if (contact.name.toLowerCase().includes(this.searchChat.toLowerCase())) {
+                        contact.visible = true;
+                    } else {
+                        contact.visible = false;
+                    }
+                });
+            },
         },
     },
 )

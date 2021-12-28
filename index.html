@@ -46,22 +46,24 @@
                 <label for="search" class="label-search d-flex">
                     <i class="fa fa-search"></i>
                 </label>
-                <input type="text" placeholder="Cerca o inizia una nuova chat" name="search" class="input-search">
+                <input @keyup="searchUser" v-model="searchChat" type="text" placeholder="Cerca o inizia una nuova chat" name="search" class="input-search">
             </div>
             <div class="contact-list">
-                <div @click="selectChat(index)" v-for="(contact, index) in contacts" class="contact d-flex" :class="(counter == index) ? 'active' : ''">
-                    <div class="contact-logo d-flex">
-                        <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
-                    </div>
-                    <div class="contact-info d-flex">
-                        <div class="contact-access d-flex">
-                            <span class="name">{{contact.name}}</span>
-                            <span>{{contact.messages[contact.messages.length - 1].date}}</span>
+                <div @click="selectChat(index)" v-for="(contact, index) in contacts"> 
+                    <div v-if="contact.visible" class="contact d-flex" :class="(counter == index) ? 'active' : ''">
+                        <div class="contact-logo d-flex">
+                            <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                         </div>
-                        <div class="contact-msg">
-                            <span>{{contact.messages[contact.messages.length - 1].text}}</span>
+                        <div class="contact-info d-flex">
+                            <div class="contact-access d-flex">
+                                <span class="name">{{contact.name}}</span>
+                                <span>{{contact.messages[contact.messages.length - 1].date}}</span>
+                            </div>
+                            <div class="contact-msg">
+                                <span>{{contact.messages[contact.messages.length - 1].text}}</span>
+                            </div>
                         </div>
-                    </div>
+                    </div>      
                 </div>
                 <!-- <div class="contact d-flex">
                     <div class="contact-logo d-flex">
