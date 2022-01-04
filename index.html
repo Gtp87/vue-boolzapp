@@ -129,6 +129,11 @@
                 <div v-for="(message, index) in contacts[counter].messages" class="message d-flex" :class="(message.status == 'sent') ? 'sent' : 'received'">
                     <span class="text-message">{{message.text}}</span>
                     <span class="date-message">{{message.date}}</span>
+                <i class="fas fa-chevron-down" @click="messageMenu(index)"></i>
+                <div class="message-options" v-if="clickedMessage.show == true && clickedMessage.index == index">
+                    <div class="message-info">Info messaggio</div>
+                    <div class="message-delete" @click="cancelMessage(index)">Cancella messaggio</div>
+                </div>
                 </div>
                 <!-- <div class="message sent d-flex">
                     <span class="text-message">Sicuro di non aver sbagliato chat?</span>

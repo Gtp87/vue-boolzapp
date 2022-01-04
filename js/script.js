@@ -100,6 +100,10 @@ const app = new Vue(
             counter: 0,
             text: '',
             searchChat: '',
+            clickedMessage: {
+                index: false,
+                show: false
+            }
         },
         methods: {
             selectChat: function (index) {
@@ -113,7 +117,7 @@ const app = new Vue(
                 let currentDay = dayjs().format("D/M/YYYY HH:mm:ss");
                 
                 // controllo non sia un testo vuoto
-                if (this.text != '') {
+                if (this.text != '' && this.text.length != 0) {
 
                     // pusho il messaggio
                     this.contacts[this.counter].messages.push(
@@ -145,6 +149,26 @@ const app = new Vue(
                     }
                 });
             },
+
+            // funzione menu info-cancella
+
+            messageMenu: function (index) {
+                if (this.clickedMessage.index !== index && this.clickedMessage.index !== false) {
+                    this.clickedMessage.show = false;
+                    this.clickedMessage.index = false;
+                }
+                this.clickedMessage.show = !this.clickedMessage.show;
+                this.clickedMessage.index = index;
+            },
+
+            // funzione cancella messaggio
+            cancelMessage: function (index) {
+                let selectedMessage = this.contacts[this.counter].messages;
+                selectedMessage.splice(index, 1);
+
+                this.clickedMessage.show = false;
+                this.clickedMessage.index = false;
+            }
         },
     },
 )

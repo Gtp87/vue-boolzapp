@@ -233,6 +233,7 @@ body {
     flex-direction: column;
     min-width: 40%;
     max-width: 65%;
+    position: relative;
 }
 
 .sent {
@@ -281,4 +282,44 @@ body {
 
 .send-message::placeholder{
     color: #6B7376;
+}
+
+.message .fa-chevron-down {
+    position: absolute;
+    top: 20%;
+    right: 6%;
+    color: #B1B1B1;
+    font-size: 0.8em;
+    display: none;
+}
+
+.message:hover .fa-chevron-down {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.message-options {
+    position: absolute;
+    right: 0;
+    bottom: -70%;
+    width: 160px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 40px -15px rgba(0, 0, 0, 0.75);
+    z-index: 999;
+    font-size: 0.95em;
+}
+
+.message-options .message-delete {
+    margin-top: 10px;
+}
+
+.message-options .message-delete,
+.message-options .message-info {
+    padding: 0.5em 0.8em;
+}
+
+.message-options .message-delete:hover,
+.message-options .message-info:hover {
+    cursor: pointer;
+    background-color:#EAEAEA;
 }
