@@ -114,7 +114,7 @@ const app = new Vue(
             newMessage: function () {
                 // imposto data corrente
                 dayjs.extend(window.dayjs_plugin_customParseFormat);
-                let currentDay = dayjs().format("D/M/YYYY HH:mm:ss");
+                let currentDay = dayjs().format("DD/MM/YYYY HH:mm:ss");
                 
                 // controllo non sia un testo vuoto
                 if (this.text != '' && this.text.length != 0) {
